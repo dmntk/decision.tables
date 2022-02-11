@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Decision tables</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --border: 1px solid black;
+      --border-spacing: 2px;
+      --background-color: #ffffff;
+      --background-color-input: #73b5e2;
+      --background-color-output: #d599c8;
+      --color-value: #ffffff;
+      --background-color-value: #a2a2a2;
+      --gap: 4px;
+      --font-weight-normal: 300;
+      --font-weight-bold: 400;
+      --font-weight-bolder: 500;
+    }
+
+    body {
+      font-size: 22px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: var(--font-weight-normal);
+      background-color: white;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: var(--font-weight-bolder);
+    }
+
+    h2 {
+      font-size: 24px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: var(--font-weight-bold);
+    }
+
+    td {
+      padding: 4px;
+      border-left: var(--border);
+      border-top: var(--border);
+    }
+
+    .decision-table {
+      border-spacing: var(--border-spacing);
+    }
+
+    .information-item {
+      position: relative;
+      border: none;
+      border-left: var(--border);
+      padding: 0;
+      font-weight: var(--font-weight-bold);
+    }
+
+    .information-item::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: -1px;
+      top: 2px;
+      border-left: var(--border);
+      z-index: -1;
+    }
+
+    .information-item-name-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    .information-item-name {
+      position: relative;
+      border-top: var(--border);
+      border-right: var(--border);
+      padding: 4px 8px 4px 6px;
+      background-color: var(--background-color);
+    }
+
+    .information-item-name::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      border-right: var(--border);
+      z-index: -1;
+    }
+
+    .hit-policy {
+      position: relative;
+      text-align: center;
+      vertical-align: top;
+      background-color: var(--background-color);
+      border-bottom: var(--border);
+      padding-left: 6px;
+    }
+
+    .hit-policy::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: 1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-expression {
+      position: relative;
+      background-color: var(--background-color-input);
+      text-align: center;
+    }
+
+    .input-expression::after {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color-input);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-expression-last {
+      position: relative;
+      background-color: var(--background-color-input);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .input-expression-last::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: 3px;
+      top: -1px;
+      border-top: 1px solid black;
+      z-index: -1;
+    }
+
+    .input-expression-last::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color-input);
+      position: absolute;
+      left: -1px;
+      top: 0;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-value {
+      position: relative;
+      color: var(--color-value);
+      background-color: var(--background-color-value);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .input-value::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: var(--background-color-value);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-value-last {
+      position: relative;
+      color: var(--color-value);
+      background-color: var(--background-color-value);
+      border-bottom: var(--border);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .output-label {
+      position: relative;
+      background-color: var(--background-color-output);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .output-label::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color-output);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .output-value-last {
+      position: relative;
+      color: var(--color-value);
+      background-color: var(--background-color-value);
+      border-right: var(--border);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .output-value-last::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      border-right: var(--border);
+      z-index: -1;
+    }
+
+    .rule-number {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+      padding-left: 6px;
+      padding-top: 6px;
+    }
+
+    .rule-number::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: -1px;
+      top: -4px;
+      border-left: var(--border);
+      z-index: -1;
+    }
+
+    .rule-number::after {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .rule-number-last {
+      position: relative;
+      text-align: center;
+      border-bottom: var(--border);
+      padding-left: 6px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .rule-number-last::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: -1px;
+      top: -4px;
+      border-left: var(--border);
+      z-index: -1;
+    }
+
+    .rule-number-last::after {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-entry {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+    }
+
+    .input-entry::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-entry-bottom {
+      position: relative;
+      background-color: var(--background-color);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .input-entry-bottom::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-entry-last {
+      position: relative;
+      background-color: var(--background-color);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .input-entry-last::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .input-entry-bottom-last {
+      position: relative;
+      background-color: var(--background-color);
+      border-right: var(--border);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .input-entry-bottom-last::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: 4px;
+      top: 0;
+      border-bottom: var(--border);
+      z-index: -1;
+    }
+
+    .output-entry-last {
+      position: relative;
+      background-color: var(--background-color);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .output-entry-last::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .output-entry-bottom-last {
+      position: relative;
+      background-color: var(--background-color);
+      border-right: var(--border);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .output-entry-bottom-last::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Decision tables cheat sheet</h1>
+
+<div>
+  <h2>Schematic layout of decision table with rules presented horizontally (rules as rows)</h2>
+  <table class="decision-table">
+    <tr>
+      <td colspan="4" class="information-item">
+        <div class="information-item-name-container">
+          <div class="information-item-name">Information item name</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="hit-policy" rowspan="2">H</td>
+      <td class="input-expression">Input expression 1</td>
+      <td class="input-expression-last">Input expression 2</td>
+      <td class="output-label">Output label</td>
+    </tr>
+    <tr>
+      <td class="input-value">input value 1a,<br/>input value 1b</td>
+      <td class="input-value-last">input value 2a,<br/>input value 2b</td>
+      <td class="output-value-last">output value 1a,<br/>output value 1b</td>
+    </tr>
+    <tr>
+      <td class="rule-number">1</td>
+      <td class="input-entry">input entry 1.1</td>
+      <td class="input-entry-last">input entry 2.1</td>
+      <td class="output-entry-last">output entry 1.1</td>
+    </tr>
+    <tr>
+      <td class="rule-number">2</td>
+      <td class="input-entry">input entry 1.2</td>
+      <td class="input-entry-last">input entry 2.2</td>
+      <td class="output-entry-last">output entry 1.2</td>
+    </tr>
+    <tr>
+      <td class="rule-number-last">3</td>
+      <td class="input-entry-bottom">input entry 1.3</td>
+      <td class="input-entry-bottom-last">input entry 2.3</td>
+      <td class="output-entry-bottom-last">output entry 1.3</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
