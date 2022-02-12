@@ -41,6 +41,12 @@
       font-weight: var(--font-weight-bold);
     }
 
+    th {
+      font-weight: var(--font-weight-bold);
+      border: 1px solid black;
+      padding: 3px;
+    }
+
     td {
       padding: 4px;
       border-left: var(--border);
@@ -118,7 +124,7 @@
       z-index: -1;
     }
 
-    .hit-policy {
+    .h-hit-policy-A {
       position: relative;
       text-align: center;
       vertical-align: top;
@@ -128,7 +134,7 @@
       font-weight: var(--font-weight-bold);
     }
 
-    .hit-policy::before {
+    .h-hit-policy-A::before {
       content: "";
       display: block;
       width: 100%;
@@ -141,7 +147,7 @@
       z-index: -1;
     }
 
-    .hit-policy-no-input {
+    .h-hit-policy-B {
       position: relative;
       text-align: center;
       vertical-align: top;
@@ -150,7 +156,7 @@
       font-weight: var(--font-weight-bold);
     }
 
-    .hit-policy-no-input::before {
+    .h-hit-policy-B::before {
       content: "";
       display: block;
       width: 100%;
@@ -287,14 +293,68 @@
       text-align: center;
     }
 
-    .output-label {
+    .h-output-label-A {
+      position: relative;
+      background-color: var(--background-color-output);
+      border-right: var(--border);
+      border-bottom: var(--border);
+      text-align: center;
+    }
+
+    .h-output-label-A::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      border-right: var(--border);
+      z-index: -1;
+    }
+
+    .h-output-label-B {
       position: relative;
       background-color: var(--background-color-output);
       border-right: var(--border);
       text-align: center;
     }
 
-    .output-label::before {
+    .h-output-label-B::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color-output);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .h-output-label-C {
+      position: relative;
+      background-color: var(--background-color-output);
+      border-right: var(--border);
+      text-align: center;
+    }
+
+    .h-output-label-C::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border-top: var(--border);
+      z-index: -1;
+    }
+
+    .h-output-label-C::after {
       content: "";
       display: block;
       width: 100%;
@@ -317,27 +377,6 @@
     }
 
     .output-value-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 0;
-      top: 4px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .output-label-single {
-      position: relative;
-      background-color: var(--background-color-output);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .output-label-single::after {
       content: "";
       display: block;
       width: 100%;
@@ -610,7 +649,7 @@
       z-index: -1;
     }
 
-    .annotation {
+    .h-annotation-A {
       position: relative;
       background-color: var(--background-color-annotation);
       text-align: center;
@@ -618,24 +657,167 @@
       border-bottom: var(--border);
     }
 
-    /*.annotation::after {*/
-    /*  content: "";*/
-    /*  display: block;*/
-    /*  width: calc(100% + var(--gap));*/
-    /*  height: calc(100% + var(--gap));*/
-    /*  background-color: var(--background-color-annotation);*/
-    /*  position: absolute;*/
-    /*  left: -1px;*/
-    /*  top: -1px;*/
-    /*  border: var(--border);*/
-    /*  z-index: -1;*/
-    /*}*/
+    .h-annotation-A::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      top: -1px;
+      border-right: var(--border);
+      z-index: -1;
+    }
+
+    .h-annotation-B {
+      position: relative;
+      background-color: var(--background-color-annotation);
+      text-align: center;
+      border-bottom: var(--border);
+    }
+
+    .h-annotation-B::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border-top: var(--border);
+      z-index: -1;
+    }
+
+    .h-annotation-B::after {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: var(--background-color-annotation);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .h-annotation-entry-A {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+      border-right: var(--border);
+    }
+
+    .h-annotation-entry-A::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border-left: var(--border);
+      border-right: var(--border);
+      z-index: -1;
+    }
+
+    .h-annotation-entry-B {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+      border-right: var(--border);
+      border-bottom: var(--border);
+    }
+
+    .h-annotation-entry-C {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+    }
+
+    .h-annotation-entry-C::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: calc(100% + var(--gap));
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
+
+    .h-annotation-entry-D {
+      position: relative;
+      background-color: var(--background-color);
+      text-align: center;
+      border-bottom: var(--border);
+    }
+
+    .h-annotation-entry-D::before {
+      content: "";
+      display: block;
+      width: calc(100% + var(--gap));
+      height: 100%;
+      background-color: var(--background-color);
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border: var(--border);
+      z-index: -1;
+    }
   </style>
 </head>
 
 <body>
 
 <h1>Decision tables cheat sheet</h1>
+
+<section>
+  <table style="border-collapse: collapse; border: 1px solid black">
+    <thead style="text-align: center">
+    <tr>
+      <th>Attribute</th>
+      <th>Values</th>
+      <th>Count</th>
+    </tr>
+    </thead>
+    <tr>
+      <td><strong>Table orientation</strong></td>
+      <td>horizontal, vertical, cross-tab</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td><strong>Information item name</strong></td>
+      <td>present, absent</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td><strong>Output label</strong></td>
+      <td>present, absent</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td><strong>Allowed values</strong></td>
+      <td>present, absent</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td><strong>Inputs</strong></td>
+      <td>absent, single, multiple</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td><strong>Outputs</strong></td>
+      <td>single, multiple</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </table>
+</section>
 
 <section>
   <h2>Schematic layout of decision table with rules presented horizontally (rules as rows)</h2>
@@ -648,10 +830,10 @@
       </td>
     </tr>
     <tr>
-      <td class="hit-policy" rowspan="2">H</td>
+      <td class="h-hit-policy-A" rowspan="2">H</td>
       <td class="input-expression">Input expression 1</td>
       <td class="input-expression-last">Input expression 2</td>
-      <td class="output-label">Output label</td>
+      <td class="h-output-label-B">Output label</td>
     </tr>
     <tr>
       <td class="input-value">input value 1a,<br/>input value 1b</td>
@@ -680,7 +862,7 @@
 </section>
 
 <section>
-  <h2>Schematic layout of decision table with rules presented horizontally (rules as rows) and annotations</h2>
+  <h2>Schematic layout of decision table with rules presented horizontally (rules as rows) and single annotation</h2>
   <table class="decision-table">
     <tr>
       <td colspan="4" class="information-item">
@@ -690,11 +872,11 @@
       </td>
     </tr>
     <tr>
-      <td class="hit-policy" rowspan="2">H</td>
+      <td class="h-hit-policy-A" rowspan="2">H</td>
       <td class="input-expression">Input expression 1</td>
       <td class="input-expression-last">Input expression 2</td>
-      <td class="output-label">Output label</td>
-      <td class="annotation" rowspan="2">Annotations</td>
+      <td class="h-output-label-C">Output label</td>
+      <td class="h-annotation-A" rowspan="2">Annotation</td>
     </tr>
     <tr>
       <td class="input-value">input value 1a,<br/>input value 1b</td>
@@ -706,21 +888,71 @@
       <td class="input-entry">input entry 1.1</td>
       <td class="input-entry-last">input entry 2.1</td>
       <td class="output-entry-last">output entry 1.1</td>
-      <td class="">annotation entry 1</td>
+      <td class="h-annotation-entry-A">annotation entry 1</td>
     </tr>
     <tr>
       <td class="horz-rule-number">2</td>
       <td class="input-entry">input entry 1.2</td>
       <td class="input-entry-last">input entry 2.2</td>
       <td class="output-entry-last">output entry 1.2</td>
-      <td class="">annotation entry 2</td>
+      <td class="h-annotation-entry-A">annotation entry 2</td>
     </tr>
     <tr>
       <td class="horz-rule-number-last">3</td>
       <td class="input-entry-bottom">input entry 1.3</td>
       <td class="input-entry-bottom-last">input entry 2.3</td>
       <td class="output-entry-bottom-last">output entry 1.3</td>
-      <td class="">annotation entry 3</td>
+      <td class="h-annotation-entry-B">annotation entry 3</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>Schematic layout of decision table with rules presented horizontally (rules as rows) and multiple annotations</h2>
+  <table class="decision-table">
+    <tr>
+      <td colspan="4" class="information-item">
+        <div class="information-item-name-container">
+          <div class="information-item-name">Information item name</div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="h-hit-policy-A" rowspan="2">H</td>
+      <td class="input-expression">Input expression 1</td>
+      <td class="input-expression-last">Input expression 2</td>
+      <td class="h-output-label-C">Output label</td>
+      <td class="h-annotation-B" rowspan="2">Annotation 1</td>
+      <td class="h-annotation-A" rowspan="2">Annotation 2</td>
+    </tr>
+    <tr>
+      <td class="input-value">input value 1a,<br/>input value 1b</td>
+      <td class="input-value-last">input value 2a,<br/>input value 2b</td>
+      <td class="output-value-last">output value 1a,<br/>output value 1b</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">1</td>
+      <td class="input-entry">input entry 1.1</td>
+      <td class="input-entry-last">input entry 2.1</td>
+      <td class="output-entry-last">output entry 1.1</td>
+      <td class="h-annotation-entry-C">annotation entry 1.1</td>
+      <td class="h-annotation-entry-A">annotation entry 2.1</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">2</td>
+      <td class="input-entry">input entry 1.2</td>
+      <td class="input-entry-last">input entry 2.2</td>
+      <td class="output-entry-last">output entry 1.2</td>
+      <td class="h-annotation-entry-C">annotation entry 1.2</td>
+      <td class="h-annotation-entry-A">annotation entry 2.2</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number-last">3</td>
+      <td class="input-entry-bottom">input entry 1.3</td>
+      <td class="input-entry-bottom-last">input entry 2.3</td>
+      <td class="output-entry-bottom-last">output entry 1.3</td>
+      <td class="h-annotation-entry-D">annotation entry 1.3</td>
+      <td class="h-annotation-entry-B">annotation entry 2.3</td>
     </tr>
   </table>
 </section>
@@ -731,8 +963,8 @@
   <h2>Decision table that returns a list of all days in a week</h2>
   <table class="decision-table">
     <tr>
-      <td class="hit-policy-no-input" rowspan="1">C</td>
-      <td class="output-label-single">Weekdays</td>
+      <td class="h-hit-policy-B" rowspan="1">C</td>
+      <td class="h-output-label-A">Weekdays</td>
     </tr>
     <tr>
       <td class="horz-rule-number-no-input">1</td>
@@ -775,9 +1007,9 @@
   <h2>Decision table that returns a list of workdays or weekend days</h2>
   <table class="decision-table">
     <tr>
-      <td class="hit-policy" rowspan="1">C</td>
+      <td class="h-hit-policy-A" rowspan="1">C</td>
       <td class="input-expression-no-allowed-values-last">Kind</td>
-      <td class="output-label-single">Weekdays</td>
+      <td class="h-output-label-A">Weekdays</td>
     </tr>
     <tr>
       <td class="horz-rule-number">1</td>
@@ -826,14 +1058,14 @@
 <div class="separator">&nbsp;</div>
 
 <section>
-  <h2>Styling the <em>hit policy</em></h2>
+  <h2>Styling <em>hit policy</em> in horizontal orientation (rules as rows)</h2>
   <table class="decision-table">
     <tr>
-      <td class="hit-policy" rowspan="2">U</td>
-      <td class="input-expression-no-allowed-values" rowspan="2">Input expressions present?</td>
-      <td class="input-expression-no-allowed-values" rowspan="2">Allowed values present?</td>
+      <td class="h-hit-policy-A" rowspan="2">U</td>
+      <td class="input-expression-no-allowed-values" rowspan="2">Input expressions?</td>
+      <td class="input-expression-no-allowed-values" rowspan="2">Allowed values?</td>
       <td class="input-expression-no-allowed-values-last" rowspan="2">Compound output?</td>
-      <td class="output-label" colspan="2">Styles and settings</td>
+      <td class="h-output-label-B" colspan="2">Styles and settings</td>
     </tr>
     <tr>
       <td class="">Style</td>
@@ -841,136 +1073,322 @@
     </tr>
     <tr>
       <td class="horz-rule-number">1</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry-last">YES</td>
-      <td class="">.hit-policy</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-hit-policy-A"</td>
       <td class="">3</td>
     </tr>
     <tr>
       <td class="horz-rule-number">2</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry-last">YES</td>
-      <td class="">.hit-policy-no-input</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-hit-policy-B"</td>
       <td class="">3</td>
     </tr>
     <tr>
       <td class="horz-rule-number">3</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry-last">YES</td>
-      <td class="">.hit-policy</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-hit-policy-A"</td>
       <td class="">2</td>
     </tr>
     <tr>
       <td class="horz-rule-number">4</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry-last">YES</td>
-      <td class="">.hit-policy-no-input</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-hit-policy-B"</td>
       <td class="">2</td>
     </tr>
     <tr>
       <td class="horz-rule-number">5</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry-last">NO</td>
-      <td class="">.hit-policy</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-hit-policy-A"</td>
       <td class="">2</td>
     </tr>
     <tr>
       <td class="horz-rule-number">6</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry-last">NO</td>
-      <td class="">.hit-policy-no-input</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-hit-policy-B"</td>
       <td class="">2</td>
     </tr>
     <tr>
       <td class="horz-rule-number">7</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry-last">NO</td>
-      <td class="">.hit-policy</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-hit-policy-A"</td>
       <td class="">1</td>
     </tr>
     <tr>
       <td class="horz-rule-number-last">8</td>
-      <td class="input-entry-bottom">NO</td>
-      <td class="input-entry-bottom">NO</td>
-      <td class="input-entry-bottom-last">NO</td>
-      <td class="">.hit-policy-no-input</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom-last">false</td>
+      <td class="">"h-hit-policy-B"</td>
       <td class="">1</td>
     </tr>
   </table>
 </section>
 
 <section>
-  <h2>Styling the <em>rule number</em></h2>
+  <h2>Styling <em>rule number</em></h2>
   <table class="decision-table">
     <tr>
-      <td class="hit-policy">U</td>
-      <td class="input-expression-no-allowed-values">Input expressions present?</td>
+      <td class="h-hit-policy-A">U</td>
+      <td class="input-expression-no-allowed-values">Input expressions?</td>
       <td class="input-expression-no-allowed-values">Last rule?</td>
       <td class="input-expression-no-allowed-values-last">Orientation</td>
-      <td class="output-label">Style</td>
+      <td class="h-output-label-A">Style</td>
     </tr>
     <tr>
       <td class="horz-rule-number">1</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">YES</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
       <td class="input-entry-last">HORIZONTAL</td>
-      <td class="">.horz-rule-number-last</td>
+      <td class="output-entry-last">.horz-rule-number-last</td>
     </tr>
     <tr>
       <td class="horz-rule-number">2</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">YES</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
       <td class="input-entry-last">HORIZONTAL</td>
-      <td class="">.horz-rule-number-no-input-last</td>
+      <td class="output-entry-last">.horz-rule-number-no-input-last</td>
     </tr>
     <tr>
       <td class="horz-rule-number">3</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">NO</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
       <td class="input-entry-last">HORIZONTAL</td>
-      <td class="">.horz-rule-number</td>
+      <td class="output-entry-last">.horz-rule-number</td>
     </tr>
     <tr>
       <td class="horz-rule-number">4</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">NO</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">false</td>
       <td class="input-entry-last">HORIZONTAL</td>
-      <td class="">.horz-rule-number-no-input</td>
+      <td class="output-entry-last">.horz-rule-number-no-input</td>
     </tr>
     <tr>
       <td class="horz-rule-number">5</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">YES</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
       <td class="input-entry-last">VERTICAL</td>
-      <td class="">?</td>
+      <td class="output-entry-last">?</td>
     </tr>
     <tr>
       <td class="horz-rule-number">6</td>
-      <td class="input-entry">NO</td>
-      <td class="input-entry">YES</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
       <td class="input-entry-last">VERTICAL</td>
-      <td class="">?</td>
+      <td class="output-entry-last">?</td>
     </tr>
     <tr>
       <td class="horz-rule-number">7</td>
-      <td class="input-entry">YES</td>
-      <td class="input-entry">NO</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
       <td class="input-entry-last">VERTICAL</td>
-      <td class="">?</td>
+      <td class="output-entry-last">?</td>
     </tr>
     <tr>
       <td class="horz-rule-number-last">8</td>
-      <td class="input-entry-bottom">NO</td>
-      <td class="input-entry-bottom">NO</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom">false</td>
       <td class="input-entry-bottom-last">VERTICAL</td>
-      <td class="">?</td>
+      <td class="output-entry-bottom-last">?</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>Styling <em>output label</em> in horizontal orientation (rules as rows)</h2>
+  <table class="decision-table">
+    <tr>
+      <td class="h-hit-policy-A">U</td>
+      <td class="input-expression-no-allowed-values">Allowed values?</td>
+      <td class="input-expression-no-allowed-values">Compound output?</td>
+      <td class="input-expression-no-allowed-values-last">Annotations present?</td>
+      <td class="h-output-label-A">Style</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">1</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">?</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">2</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">?</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">3</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">"h-output-label-C"</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">4</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">?</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">5</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="output-entry-last">?</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">6</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="output-entry-last">?</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">7</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">false</td>
+      <td class="output-entry-last">"h-output-label-B"</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number-last">8</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom-last">false</td>
+      <td class="output-entry-bottom-last">"h-output-label-A"</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>Styling <em>annotation</em> in horizontal orientation (rules as rows)</h2>
+  <table class="decision-table">
+    <tr>
+      <td class="h-hit-policy-A" rowspan="2">U</td>
+      <td class="input-expression-no-allowed-values" rowspan="2">Last column?</td>
+      <td class="input-expression-no-allowed-values" rowspan="2">Allowed values?</td>
+      <td class="input-expression-no-allowed-values-last" rowspan="2">Compound output?</td>
+      <td class="h-output-label-B" colspan="2">Styles and settings</td>
+    </tr>
+    <tr>
+      <td class="">Style</td>
+      <td class="">Rowspan</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">1</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-annotation-A"</td>
+      <td class="">3</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">2</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-annotation-B"</td>
+      <td class="">3</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">3</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-annotation-A"</td>
+      <td class="">2</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">4</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="">"h-annotation-B"</td>
+      <td class="">2</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">5</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-annotation-A"</td>
+      <td class="">2</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">6</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-annotation-B"</td>
+      <td class="">2</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">7</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">false</td>
+      <td class="">"h-annotation-A"</td>
+      <td class="">1</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number-last">8</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom">false</td>
+      <td class="input-entry-bottom-last">false</td>
+      <td class="">"h-annotation-B"</td>
+      <td class="">1</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>Styling <em>annotation entry</em> in horizontal orientation (rules as rows)</h2>
+  <table class="decision-table">
+    <tr>
+      <td class="h-hit-policy-A" rowspan="1">U</td>
+      <td class="input-expression-no-allowed-values" rowspan="1">Last column?</td>
+      <td class="input-expression-no-allowed-values-last" rowspan="1">Last row?</td>
+      <td class="h-output-label-A" colspan="1">Style</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">1</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">"h-annotation-entry-B"</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">2</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">true</td>
+      <td class="output-entry-last">"h-annotation-entry-D"</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">3</td>
+      <td class="input-entry">true</td>
+      <td class="input-entry-last">false</td>
+      <td class="output-entry-last">"h-annotation-entry-A"</td>
+    </tr>
+    <tr>
+      <td class="horz-rule-number">4</td>
+      <td class="input-entry">false</td>
+      <td class="input-entry-last">false</td>
+      <td class="output-entry-last">"h-annotation-entry-C"</td>
     </tr>
   </table>
 </section>
