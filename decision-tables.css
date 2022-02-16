@@ -47,6 +47,7 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
+  padding-left: 2px;
   border-bottom: 1px solid black;
 }
 .decision-table .h-hit-policy-a::after {
@@ -67,7 +68,10 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
+  padding-left: 2px;
   border: 1px solid black;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .decision-table .h-hit-policy-b::after {
   position: absolute;
@@ -377,6 +381,7 @@
   position: relative;
   background-color: #ffffff;
   text-align: center;
+  padding-left: 2px;
 }
 .decision-table .horz-rule-number::before {
   position: absolute;
@@ -405,6 +410,7 @@
   position: relative;
   background-color: #ffffff;
   text-align: center;
+  padding-left: 2px;
   border-bottom: 1px solid black;
 }
 .decision-table .horz-rule-number-last::after {
@@ -423,7 +429,9 @@
   position: relative;
   background-color: #ffffff;
   text-align: center;
+  padding-left: 2px;
   border-right: 1px solid black;
+  padding-left: 0;
 }
 .decision-table .horz-rule-number-no-input::before {
   position: absolute;
@@ -452,8 +460,10 @@
   position: relative;
   background-color: #ffffff;
   text-align: center;
+  padding-left: 2px;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  padding-left: 0;
 }
 .decision-table .horz-rule-number-no-input-last::before {
   position: absolute;

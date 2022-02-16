@@ -96,6 +96,7 @@ $font-size-normal: 16px
   vertical-align: top
   background-color: $background-color-fill
   font-weight: $font-weight-bold
+  padding-left: $border-gap
 
 // common styling for input expressions
 @mixin input-expression
@@ -136,6 +137,7 @@ $font-size-normal: 16px
   position: relative
   background-color: $background-color-fill
   text-align: center
+  padding-left: $border-gap
 
 // common styling for input entries
 @mixin input-entry
@@ -194,6 +196,8 @@ $font-size-normal: 16px
   .h-hit-policy-b
     @include hit-policy
     border: $border
+    padding-left: $border-gap
+    padding-right: $border-gap
 
     &::after
       @include connector-top-right
@@ -310,9 +314,7 @@ $font-size-normal: 16px
       @include fill-right
 
   .horz-rule-number
-    position: relative
-    background-color: $background-color-fill
-    text-align: center
+    @include rule-number
 
     &::before
       @include connector-left-top
@@ -330,6 +332,7 @@ $font-size-normal: 16px
   .horz-rule-number-no-input
     @include rule-number
     border-right: $border
+    padding-left: 0
 
     &::before
       @include connector-left-top
@@ -341,6 +344,7 @@ $font-size-normal: 16px
     @include rule-number
     border-right: $border
     border-bottom: $border
+    padding-left: 0
 
     &::before
       @include connector-bottom-right
