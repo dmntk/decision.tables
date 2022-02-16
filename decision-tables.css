@@ -1,0 +1,564 @@
+.decision-table {
+  border-spacing: 2px;
+  background-color: transparent;
+  font-size: 16px;
+}
+.decision-table td {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
+.decision-table .information-item {
+  position: relative;
+  border: unset;
+  border-left: 1px solid black;
+  font-weight: 400;
+  padding: 0;
+}
+.decision-table .information-item-name-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+.decision-table .information-item-name {
+  position: relative;
+  border: unset;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  background-color: #ffffff;
+}
+.decision-table .information-item-name::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .h-hit-policy-a {
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  background-color: #ffffff;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+}
+.decision-table .h-hit-policy-a::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .h-hit-policy-b {
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  background-color: #ffffff;
+  font-weight: 400;
+  border: 1px solid black;
+}
+.decision-table .h-hit-policy-b::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-top: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: -1px;
+  z-index: -1;
+}
+.decision-table .input-expression {
+  position: relative;
+  text-align: center;
+  background-color: #73b5e2;
+  font-weight: 300;
+}
+.decision-table .input-expression::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #73b5e2;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.decision-table .input-expression-last {
+  position: relative;
+  text-align: center;
+  background-color: #73b5e2;
+  font-weight: 300;
+  border-right: 1px solid black;
+}
+.decision-table .input-expression-last::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-top: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: -1px;
+  z-index: -1;
+}
+.decision-table .input-expression-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #73b5e2;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .input-expression-no-allowed-values {
+  position: relative;
+  text-align: center;
+  background-color: #73b5e2;
+  font-weight: 300;
+  border-bottom: 1px solid black;
+}
+.decision-table .input-expression-no-allowed-values::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #73b5e2;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .input-expression-no-allowed-values-last {
+  position: relative;
+  text-align: center;
+  background-color: #73b5e2;
+  font-weight: 300;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .input-expression-no-allowed-values-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-top: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: -1px;
+  z-index: -1;
+}
+.decision-table .input-value {
+  position: relative;
+  color: #ffffff;
+  background-color: #a2a2a2;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.decision-table .input-value::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #a2a2a2;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .input-value-last {
+  position: relative;
+  color: #ffffff;
+  background-color: #a2a2a2;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.decision-table .output-value-last {
+  position: relative;
+  color: #ffffff;
+  background-color: #a2a2a2;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .output-value-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-right: 1px solid black;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: 0;
+  top: 1px;
+  z-index: -1;
+}
+.decision-table .h-output-label-A {
+  position: relative;
+  background-color: #d599c8;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .h-output-label-A::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-right: 1px solid black;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: 0;
+  top: 1px;
+  z-index: -1;
+}
+.decision-table .h-output-label-B {
+  position: relative;
+  background-color: #d599c8;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .h-output-label-B::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #d599c8;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .h-output-label-C {
+  position: relative;
+  background-color: #d599c8;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .h-output-label-C::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-top: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: -1px;
+  z-index: -1;
+}
+.decision-table .h-output-label-C::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #d599c8;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .h-annotation-A {
+  position: relative;
+  background-color: #9ec79e;
+  text-align: center;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+.decision-table .h-annotation-A::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-right: 1px solid black;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: 0;
+  top: 1px;
+  z-index: -1;
+}
+.decision-table .h-annotation-B {
+  position: relative;
+  background-color: #9ec79e;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.decision-table .h-annotation-B::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #9ec79e;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .h-annotation-entry-A {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .h-annotation-entry-A::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .h-annotation-entry-B {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .h-annotation-entry-C {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+}
+.decision-table .h-annotation-entry-C::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.decision-table .h-annotation-entry-D {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.decision-table .h-annotation-entry-D::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .horz-rule-number {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+}
+.decision-table .horz-rule-number::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 1px solid black;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
+  z-index: -1;
+}
+.decision-table .horz-rule-number::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.decision-table .horz-rule-number-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.decision-table .horz-rule-number-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .horz-rule-number-no-input {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .horz-rule-number-no-input::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 1px solid black;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
+  z-index: -1;
+}
+.decision-table .horz-rule-number-no-input::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .horz-rule-number-no-input-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .horz-rule-number-no-input-last::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-bottom: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: 0;
+  z-index: -1;
+}
+.decision-table .input-entry {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+}
+.decision-table .input-entry::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.decision-table .input-entry-bottom {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.decision-table .input-entry-bottom::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: 100%;
+}
+.decision-table .input-entry-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .input-entry-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .input-entry-bottom-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.decision-table .input-entry-bottom-last::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-bottom: 1px solid black;
+  width: calc(100% + 2px + 1px);
+  height: 100%;
+  left: 1px;
+  top: 0;
+  z-index: -1;
+}
+.decision-table .output-entry-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.decision-table .output-entry-last::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid black;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.decision-table .output-entry-bottom-last {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}

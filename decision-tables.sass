@@ -1,0 +1,386 @@
+$border-width: 1px
+$border-gap: 2px
+$border: $border-width solid black
+$font-weight-normal: 300
+$font-weight-bold: 400
+$font-weight-bolder: 500
+$background-color-fill: #ffffff
+$background-color-input: #73b5e2
+$background-color-output: #d599c8
+$background-color-allowed-value: #a2a2a2
+$background-color-annotation: #9ec79e
+$color-allowed-value: #ffffff
+$font-size-normal: 16px
+
+@mixin fill($fill: $background-color-fill)
+  position: absolute
+  display: block
+  content: ""
+  border: $border
+  background-color: $fill
+  left: -$border-width
+  top: -$border-width
+  z-index: -1
+
+@mixin fill-right($fill: $background-color-fill)
+  @include fill($fill)
+  width: calc(100% + #{$border-gap})
+  height: 100%
+
+@mixin fill-down($fill: $background-color-fill)
+  @include fill($fill)
+  width: 100%
+  height: calc(100% + #{$border-gap})
+
+@mixin fill-right-down($fill: $background-color-fill)
+  @include fill($fill)
+  width: calc(100% + #{$border-gap})
+  height: calc(100% + #{$border-gap})
+
+// connector joining top-right corner of the source cell
+// with the top-left corner of the destination cell
+@mixin connector-top-right
+  position: absolute
+  display: block
+  content: ""
+  border-top: $border
+  width: calc(100% + #{$border-gap} + #{$border-width})
+  height: 100%
+  left: 1px
+  top: -$border-width
+  z-index: -1
+
+// connector joining bottom-right corner of the source cell
+// with the bottom-left corner of the destination cell
+@mixin connector-bottom-right
+  position: absolute
+  display: block
+  content: ""
+  border-bottom: $border
+  width: calc(100% + #{$border-gap} + #{$border-width})
+  height: 100%
+  left: -$border-width + $border-gap
+  top: 0
+  z-index: -1
+
+// connector joining right-bottom corner of the source cell
+// with the right-top corner of the destination cell
+@mixin connector-right-bottom
+  position: absolute
+  display: block
+  content: ""
+  border-right: $border
+  width: 100%
+  height: calc(100% + #{$border-gap} + #{$border-width})
+  left: 0
+  top: $border-width
+  z-index: -1
+
+// connector joining top-left corner of the source cell
+// with the bottom-left corner of the destination cell
+@mixin connector-left-top
+  position: absolute
+  display: block
+  content: ""
+  border-left: $border
+  width: 100%
+  height: calc(100% + #{$border-gap} + #{$border-width})
+  left: -1px
+  top: -$border-width - $border-gap
+  z-index: -1
+
+// common styling for hit policy
+@mixin hit-policy
+  position: relative
+  text-align: center
+  vertical-align: top
+  background-color: $background-color-fill
+  font-weight: $font-weight-bold
+
+// common styling for input expressions
+@mixin input-expression
+  position: relative
+  text-align: center
+  background-color: $background-color-input
+  font-weight: $font-weight-normal
+
+// common styling for allowed values
+@mixin allowed-value
+  position: relative
+  color: $color-allowed-value
+  background-color: $background-color-allowed-value
+  text-align: center
+
+// common styling for output label
+@mixin output-label
+  position: relative
+  background-color: $background-color-output
+  text-align: center
+  border-right: $border
+
+// common styling for annotations (annotation header)
+@mixin annotation
+  position: relative
+  background-color: $background-color-annotation
+  text-align: center
+  border-bottom: $border
+
+// common styling for annotation entries
+@mixin annotation-entry
+  position: relative
+  background-color: $background-color-fill
+  text-align: center
+
+// common styling for rule numbers
+@mixin rule-number
+  position: relative
+  background-color: $background-color-fill
+  text-align: center
+
+// common styling for input entries
+@mixin input-entry
+  position: relative
+  background-color: $background-color-fill
+  text-align: center
+
+// common styling for output entries
+@mixin output-entry
+  position: relative
+  background-color: $background-color-fill
+  text-align: center
+
+// styles common for the whole decision table
+.decision-table
+  border-spacing: $border-gap
+  background-color: transparent
+  font-size: $font-size-normal
+
+  td
+    border-left: $border
+    border-top: $border
+    padding: 0
+    margin: 0
+
+  .information-item
+    position: relative
+    border: unset
+    border-left: $border
+    font-weight: $font-weight-bold
+    padding: 0
+
+  .information-item-name-container
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: flex-start
+
+  .information-item-name
+    position: relative
+    border: unset
+    border-top: $border
+    border-right: $border
+    background-color: $background-color-fill
+
+    &::after
+      @include fill-down
+
+  .h-hit-policy-a
+    @include hit-policy
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .h-hit-policy-b
+    @include hit-policy
+    border: $border
+
+    &::after
+      @include connector-top-right
+
+  .input-expression
+    @include input-expression
+
+    &::after
+      @include fill-right-down($background-color-input)
+
+  .input-expression-last
+    @include input-expression
+    border-right: $border
+
+    &::before
+      @include connector-top-right
+
+    &::after
+      @include fill-down($background-color-input)
+
+  .input-expression-no-allowed-values
+    @include input-expression
+    border-bottom: $border
+
+    &::after
+      @include fill-right($background-color-input)
+
+  .input-expression-no-allowed-values-last
+    @include input-expression
+    border-right: $border
+    border-bottom: $border
+
+    &::after
+      @include connector-top-right
+
+  .input-value
+    @include allowed-value
+    border-bottom: $border
+
+    &::after
+      @include fill-right($background-color-allowed-value)
+
+  .input-value-last
+    @include allowed-value
+    border-bottom: $border
+    border-right: $border
+
+  .output-value-last
+    @include allowed-value
+    border-right: $border
+    border-bottom: $border
+
+    &::after
+      @include connector-right-bottom
+
+  .h-output-label-A
+    @include output-label
+    border-bottom: $border
+
+    &::after
+      @include connector-right-bottom
+
+  .h-output-label-B
+    @include output-label
+
+    &::after
+      @include fill-down($background-color-output)
+
+  .h-output-label-C
+    @include output-label
+
+    &::before
+      @include connector-top-right
+
+    &::after
+      @include fill-down($background-color-output)
+
+  .h-annotation-A
+    @include annotation
+    border-right: $border
+
+    &::after
+      @include connector-right-bottom
+
+  .h-annotation-B
+    @include annotation
+
+    &::after
+      @include fill-right($background-color-annotation)
+
+  .h-annotation-entry-A
+    @include annotation-entry
+    border-right: $border
+
+    &::after
+      @include fill-down
+
+  .h-annotation-entry-B
+    @include annotation-entry
+    border-right: $border
+    border-bottom: $border
+
+  .h-annotation-entry-C
+    @include annotation-entry
+
+    &::after
+      @include fill-right-down
+
+  .h-annotation-entry-D
+    @include annotation-entry
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .horz-rule-number
+    position: relative
+    background-color: $background-color-fill
+    text-align: center
+
+    &::before
+      @include connector-left-top
+
+    &::after
+      @include fill-right-down
+
+  .horz-rule-number-last
+    @include rule-number
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .horz-rule-number-no-input
+    @include rule-number
+    border-right: $border
+
+    &::before
+      @include connector-left-top
+
+    &::after
+      @include fill-down
+
+  .horz-rule-number-no-input-last
+    @include rule-number
+    border-right: $border
+    border-bottom: $border
+
+    &::before
+      @include connector-bottom-right
+
+  .input-entry
+    @include input-entry
+
+    &::after
+      @include fill-right-down
+
+  .input-entry-bottom
+    @include input-entry
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .input-entry-last
+    @include input-entry
+    border-right: $border
+
+    &::after
+      @include fill-down
+
+  .input-entry-bottom-last
+    @include input-entry
+    border-right: $border
+    border-bottom: $border
+
+    &::before
+      @include connector-bottom-right
+
+  .output-entry-last
+    @include output-entry
+    border-right: $border
+
+    &::after
+      @include fill-down
+
+  .output-entry-bottom-last
+    @include output-entry
+    border-right: $border
+    border-bottom: $border

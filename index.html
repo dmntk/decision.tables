@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Decision tables</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
 
   <style>
     :root {
       --border: 1px solid black;
-      --border-spacing: 2px;
-      --background-color: #ffffff;
-      --background-color-input: #73b5e2;
-      --background-color-output: #d599c8;
-      --background-color-annotation: #9ec79e;
-      --color-value: #ffffff;
-      --background-color-value: #a2a2a2;
-      --gap: 4px;
       --font-weight-normal: 300;
       --font-size-normal: 16px;
       --font-weight-bold: 400;
@@ -31,13 +23,11 @@
 
     h1 {
       font-size: 26px;
-      font-family: 'Roboto', sans-serif;
       font-weight: var(--font-weight-bolder);
     }
 
     h2 {
       font-size: 18px;
-      font-family: 'Roboto', sans-serif;
       font-weight: var(--font-weight-bold);
     }
 
@@ -48,7 +38,7 @@
     }
 
     td {
-      padding: 4px;
+      padding: 4px 10px;
       border-left: var(--border);
       border-top: var(--border);
     }
@@ -61,7 +51,6 @@
       display: table;
       margin: 8px;
       padding: 4px;
-      font-size: var(--font-size-normal);
       border: 1px solid #575757;
       background-color: #d5d5d5;
     }
@@ -70,707 +59,9 @@
       margin-top: 20px;
       border-top: 2px solid gray;
     }
-
-    .decision-table {
-      border-spacing: var(--border-spacing);
-    }
-
-    .information-item {
-      position: relative;
-      border: none;
-      border-left: var(--border);
-      padding: 0;
-      font-weight: var(--font-weight-bold);
-    }
-
-    .information-item::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: 2px;
-      border-left: var(--border);
-      z-index: -1;
-    }
-
-    .information-item-name-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-
-    .information-item-name {
-      position: relative;
-      border-top: var(--border);
-      border-right: var(--border);
-      padding: 4px 8px 4px 6px;
-      background-color: var(--background-color);
-    }
-
-    .information-item-name::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: 0;
-      top: 2px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .h-hit-policy-A {
-      position: relative;
-      text-align: center;
-      vertical-align: top;
-      background-color: var(--background-color);
-      border-bottom: var(--border);
-      padding-left: 6px;
-      font-weight: var(--font-weight-bold);
-    }
-
-    .h-hit-policy-A::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: 1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .h-hit-policy-B {
-      position: relative;
-      text-align: center;
-      vertical-align: top;
-      background-color: var(--background-color);
-      border: var(--border);
-      font-weight: var(--font-weight-bold);
-    }
-
-    .h-hit-policy-B::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 4px;
-      top: -1px;
-      border-top: 1px solid black;
-      z-index: -1;
-    }
-
-    .input-expression {
-      position: relative;
-      background-color: var(--background-color-input);
-      text-align: center;
-    }
-
-    .input-expression::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color-input);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-expression-last {
-      position: relative;
-      background-color: var(--background-color-input);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .input-expression-last::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 3px;
-      top: -1px;
-      border-top: 1px solid black;
-      z-index: -1;
-    }
-
-    .input-expression-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color-input);
-      position: absolute;
-      left: -1px;
-      top: 0;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-expression-no-allowed-values {
-      position: relative;
-      background-color: var(--background-color-input);
-      text-align: center;
-      border-bottom: var(--border);
-    }
-
-    .input-expression-no-allowed-values::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color-input);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border-top: var(--border);
-      border-bottom: var(--border);
-      z-index: -1;
-    }
-
-    .input-expression-no-allowed-values-last {
-      position: relative;
-      background-color: var(--background-color-input);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .input-expression-no-allowed-values-last::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 3px;
-      top: -1px;
-      border-top: 1px solid black;
-      z-index: -1;
-    }
-
-    .input-value {
-      position: relative;
-      color: var(--color-value);
-      background-color: var(--background-color-value);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .input-value::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color-value);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-value-last {
-      position: relative;
-      color: var(--color-value);
-      background-color: var(--background-color-value);
-      border-bottom: var(--border);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .h-output-label-A {
-      position: relative;
-      background-color: var(--background-color-output);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .h-output-label-A::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 0;
-      top: 4px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .h-output-label-B {
-      position: relative;
-      background-color: var(--background-color-output);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .h-output-label-B::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color-output);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .h-output-label-C {
-      position: relative;
-      background-color: var(--background-color-output);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .h-output-label-C::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border-top: var(--border);
-      z-index: -1;
-    }
-
-    .h-output-label-C::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color-output);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .output-value-last {
-      position: relative;
-      color: var(--color-value);
-      background-color: var(--background-color-value);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .output-value-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 0;
-      top: 4px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      padding-left: 6px;
-      padding-top: 6px;
-    }
-
-    .horz-rule-number::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -4px;
-      border-left: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-last {
-      position: relative;
-      text-align: center;
-      border-bottom: var(--border);
-      padding-left: 6px;
-      padding-top: 6px;
-      padding-bottom: 6px;
-    }
-
-    .horz-rule-number-last::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -4px;
-      border-left: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-last::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-no-input {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      border-right: var(--border);
-      padding-top: 6px;
-    }
-
-    .horz-rule-number-no-input::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -4px;
-      border-left: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-no-input::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: 0;
-      top: 4px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-no-input-last {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      border-right: var(--border);
-      border-bottom: var(--border);
-      padding-top: 6px;
-      padding-bottom: 6px;
-    }
-
-    .horz-rule-number-no-input-last::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -4px;
-      border-left: var(--border);
-      z-index: -1;
-    }
-
-    .horz-rule-number-no-input-last::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 4px;
-      top: 0;
-      border-bottom: var(--border);
-      z-index: -1;
-    }
-
-    .input-entry {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-    }
-
-    .input-entry::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-entry-bottom {
-      position: relative;
-      background-color: var(--background-color);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .input-entry-bottom::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-entry-last {
-      position: relative;
-      background-color: var(--background-color);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .input-entry-last::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .input-entry-bottom-last {
-      position: relative;
-      background-color: var(--background-color);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .input-entry-bottom-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: 4px;
-      top: 0;
-      border-bottom: var(--border);
-      z-index: -1;
-    }
-
-    .output-entry-last {
-      position: relative;
-      background-color: var(--background-color);
-      border-right: var(--border);
-      text-align: center;
-    }
-
-    .output-entry-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .output-entry-bottom-last {
-      position: relative;
-      background-color: var(--background-color);
-      border-right: var(--border);
-      border-bottom: var(--border);
-      text-align: center;
-    }
-
-    .output-entry-bottom-last::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-A {
-      position: relative;
-      background-color: var(--background-color-annotation);
-      text-align: center;
-      border-right: var(--border);
-      border-bottom: var(--border);
-    }
-
-    .h-annotation-A::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: transparent;
-      position: absolute;
-      left: 0;
-      top: -1px;
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-B {
-      position: relative;
-      background-color: var(--background-color-annotation);
-      text-align: center;
-      border-bottom: var(--border);
-    }
-
-    .h-annotation-B::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: transparent;
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border-top: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-B::after {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color-annotation);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-entry-A {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      border-right: var(--border);
-    }
-
-    .h-annotation-entry-A::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border-left: var(--border);
-      border-right: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-entry-B {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      border-right: var(--border);
-      border-bottom: var(--border);
-    }
-
-    .h-annotation-entry-C {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-    }
-
-    .h-annotation-entry-C::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: calc(100% + var(--gap));
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
-
-    .h-annotation-entry-D {
-      position: relative;
-      background-color: var(--background-color);
-      text-align: center;
-      border-bottom: var(--border);
-    }
-
-    .h-annotation-entry-D::before {
-      content: "";
-      display: block;
-      width: calc(100% + var(--gap));
-      height: 100%;
-      background-color: var(--background-color);
-      position: absolute;
-      left: -1px;
-      top: -1px;
-      border: var(--border);
-      z-index: -1;
-    }
   </style>
+
+  <link rel="stylesheet" href="decision-tables.css">
 </head>
 
 <body>
@@ -839,7 +130,7 @@
       </td>
     </tr>
     <tr>
-      <td class="h-hit-policy-A" rowspan="2">H</td>
+      <td class="h-hit-policy-a" rowspan="2">H</td>
       <td class="input-expression">Input expression 1</td>
       <td class="input-expression-last">Input expression 2</td>
       <td class="h-output-label-B">Output label</td>
@@ -881,7 +172,7 @@
       </td>
     </tr>
     <tr>
-      <td class="h-hit-policy-A" rowspan="2">H</td>
+      <td class="h-hit-policy-a" rowspan="2">H</td>
       <td class="input-expression">Input expression 1</td>
       <td class="input-expression-last">Input expression 2</td>
       <td class="h-output-label-C">Output label</td>
@@ -927,7 +218,7 @@
       </td>
     </tr>
     <tr>
-      <td class="h-hit-policy-A" rowspan="2">H</td>
+      <td class="h-hit-policy-a" rowspan="2">H</td>
       <td class="input-expression">Input expression 1</td>
       <td class="input-expression-last">Input expression 2</td>
       <td class="h-output-label-C">Output label</td>
@@ -972,7 +263,7 @@
   <h2>Decision table that returns a list of all days in a week</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-B" rowspan="1">C</td>
+      <td class="h-hit-policy-b" rowspan="1">C</td>
       <td class="h-output-label-A">Weekdays</td>
     </tr>
     <tr>
@@ -1016,7 +307,7 @@
   <h2>Decision table that returns a list of workdays or weekend days</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A" rowspan="1">C</td>
+      <td class="h-hit-policy-a" rowspan="1">C</td>
       <td class="input-expression-no-allowed-values-last">Kind</td>
       <td class="h-output-label-A">Weekdays</td>
     </tr>
@@ -1070,7 +361,7 @@
   <h2>Styling <em>hit policy</em> in horizontal orientation (rules as rows)</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A" rowspan="2">U</td>
+      <td class="h-hit-policy-a" rowspan="2">U</td>
       <td class="input-expression-no-allowed-values" rowspan="2">Input expressions?</td>
       <td class="input-expression-no-allowed-values" rowspan="2">Allowed values?</td>
       <td class="input-expression-no-allowed-values-last" rowspan="2">Compound output?</td>
@@ -1085,7 +376,7 @@
       <td class="input-entry">true</td>
       <td class="input-entry">true</td>
       <td class="input-entry-last">true</td>
-      <td class="">"h-hit-policy-A"</td>
+      <td class="">"h-hit-policy-a"</td>
       <td class="">3</td>
     </tr>
     <tr>
@@ -1093,7 +384,7 @@
       <td class="input-entry">false</td>
       <td class="input-entry">true</td>
       <td class="input-entry-last">true</td>
-      <td class="">"h-hit-policy-B"</td>
+      <td class="">"h-hit-policy-b"</td>
       <td class="">3</td>
     </tr>
     <tr>
@@ -1101,7 +392,7 @@
       <td class="input-entry">true</td>
       <td class="input-entry">false</td>
       <td class="input-entry-last">true</td>
-      <td class="">"h-hit-policy-A"</td>
+      <td class="">"h-hit-policy-a"</td>
       <td class="">2</td>
     </tr>
     <tr>
@@ -1109,7 +400,7 @@
       <td class="input-entry">false</td>
       <td class="input-entry">false</td>
       <td class="input-entry-last">true</td>
-      <td class="">"h-hit-policy-B"</td>
+      <td class="">"h-hit-policy-b"</td>
       <td class="">2</td>
     </tr>
     <tr>
@@ -1117,7 +408,7 @@
       <td class="input-entry">true</td>
       <td class="input-entry">true</td>
       <td class="input-entry-last">false</td>
-      <td class="">"h-hit-policy-A"</td>
+      <td class="">"h-hit-policy-a"</td>
       <td class="">2</td>
     </tr>
     <tr>
@@ -1125,7 +416,7 @@
       <td class="input-entry">false</td>
       <td class="input-entry">true</td>
       <td class="input-entry-last">false</td>
-      <td class="">"h-hit-policy-B"</td>
+      <td class="">"h-hit-policy-b"</td>
       <td class="">2</td>
     </tr>
     <tr>
@@ -1133,7 +424,7 @@
       <td class="input-entry">true</td>
       <td class="input-entry">false</td>
       <td class="input-entry-last">false</td>
-      <td class="">"h-hit-policy-A"</td>
+      <td class="">"h-hit-policy-a"</td>
       <td class="">1</td>
     </tr>
     <tr>
@@ -1141,7 +432,7 @@
       <td class="input-entry-bottom">false</td>
       <td class="input-entry-bottom">false</td>
       <td class="input-entry-bottom-last">false</td>
-      <td class="">"h-hit-policy-B"</td>
+      <td class="">"h-hit-policy-b"</td>
       <td class="">1</td>
     </tr>
   </table>
@@ -1151,7 +442,7 @@
   <h2>Styling <em>rule number</em></h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A">U</td>
+      <td class="h-hit-policy-a">U</td>
       <td class="input-expression-no-allowed-values">Input expressions?</td>
       <td class="input-expression-no-allowed-values">Last rule?</td>
       <td class="input-expression-no-allowed-values-last">Orientation</td>
@@ -1220,7 +511,7 @@
   <h2>Styling <em>output label</em> in horizontal orientation (rules as rows)</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A">U</td>
+      <td class="h-hit-policy-a">U</td>
       <td class="input-expression-no-allowed-values">Allowed values?</td>
       <td class="input-expression-no-allowed-values">Compound output?</td>
       <td class="input-expression-no-allowed-values-last">Annotations present?</td>
@@ -1289,7 +580,7 @@
   <h2>Styling <em>annotation</em> in horizontal orientation (rules as rows)</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A" rowspan="2">U</td>
+      <td class="h-hit-policy-a" rowspan="2">U</td>
       <td class="input-expression-no-allowed-values" rowspan="2">Last column?</td>
       <td class="input-expression-no-allowed-values" rowspan="2">Allowed values?</td>
       <td class="input-expression-no-allowed-values-last" rowspan="2">Compound output?</td>
@@ -1370,7 +661,7 @@
   <h2>Styling <em>annotation entry</em> in horizontal orientation (rules as rows)</h2>
   <table class="decision-table">
     <tr>
-      <td class="h-hit-policy-A" rowspan="1">U</td>
+      <td class="h-hit-policy-a" rowspan="1">U</td>
       <td class="input-expression-no-allowed-values" rowspan="1">Last column?</td>
       <td class="input-expression-no-allowed-values-last" rowspan="1">Last row?</td>
       <td class="h-output-label-A" colspan="1">Style</td>
