@@ -5,10 +5,10 @@ $font-weight-normal: 300
 $font-weight-bold: 400
 $font-weight-bolder: 500
 $background-color-fill: #ffffff
-$background-color-input: #73b5e2
-$background-color-output: #d599c8
-$background-color-allowed-value: #a2a2a2
-$background-color-annotation: #9ec79e
+$background-color-input: #a1c9e3
+$background-color-output: #e5c0dc
+$background-color-allowed-value: #9a9a9a
+$background-color-annotation: #d5e8d5
 $color-allowed-value: #ffffff
 $font-size-normal: 16px
 
@@ -151,6 +151,12 @@ $font-size-normal: 16px
   background-color: $background-color-fill
   text-align: center
 
+// common styling for output components
+@mixin output-component
+  position: relative
+  background-color: $background-color-output
+  text-align: center
+
 // styles common for the whole decision table
 .decision-table
   border-spacing: $border-gap
@@ -185,22 +191,6 @@ $font-size-normal: 16px
 
     &::after
       @include fill-down
-
-  .h-hit-policy-a
-    @include hit-policy
-    border-bottom: $border
-
-    &::after
-      @include fill-right
-
-  .h-hit-policy-b
-    @include hit-policy
-    border: $border
-    padding-left: $border-gap
-    padding-right: $border-gap
-
-    &::after
-      @include connector-top-right
 
   .input-expression
     @include input-expression
@@ -245,13 +235,25 @@ $font-size-normal: 16px
     border-bottom: $border
     border-right: $border
 
-  .output-value-last
+  .output-value-a
+    @include allowed-value
+    border-bottom: $border
+
+    &::after
+      @include fill-right($background-color-allowed-value)
+
+  .output-value-b
     @include allowed-value
     border-right: $border
     border-bottom: $border
 
     &::after
       @include connector-right-bottom
+
+  .output-value-c
+    @include allowed-value
+    border-right: $border
+    border-bottom: $border
 
   .h-output-label-A
     @include output-label
@@ -377,14 +379,60 @@ $font-size-normal: 16px
     &::before
       @include connector-bottom-right
 
-  .output-entry-last
+  .h-output-component-a
+    @include output-component
+    border-bottom: $border
+
+    &::after
+      @include fill-right($background-color-output)
+
+  .h-output-component-b
+    @include output-component
+    border-right: $border
+    border-bottom: $border
+
+    &::after
+      @include connector-right-bottom
+
+.horizontal
+
+  .hit-policy-a
+    @include hit-policy
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .hit-policy-b
+    @include hit-policy
+    border: $border
+    padding-left: $border-gap
+    padding-right: $border-gap
+
+    &::after
+      @include connector-top-right
+
+  .output-entry-a
+    @include output-entry
+
+    &::after
+      @include fill-right-down
+
+  .output-entry-b
+    @include output-entry
+    border-bottom: $border
+
+    &::after
+      @include fill-right
+
+  .output-entry-c
     @include output-entry
     border-right: $border
 
     &::after
       @include fill-down
 
-  .output-entry-bottom-last
+  .output-entry-d
     @include output-entry
     border-right: $border
     border-bottom: $border
