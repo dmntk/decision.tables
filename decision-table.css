@@ -1,18 +1,18 @@
 .decision-table {
-  border-spacing: 4px;
+  border-spacing: 2px;
   background-color: transparent;
   font-size: 16px;
 }
 .decision-table td {
-  border-left: 8px solid #7188d3;
-  border-top: 8px solid #7188d3;
+  border-left: 1px solid #000000;
+  border-top: 1px solid #000000;
   padding: 0;
   margin: 0;
 }
 .decision-table .information-item {
   position: relative;
   border: unset;
-  border-left: 8px solid #7188d3;
+  border-left: 1px solid #000000;
   font-weight: 400;
   padding: 0;
 }
@@ -25,137 +25,137 @@
 .decision-table .information-item-name {
   position: relative;
   border: unset;
-  border-top: 8px solid #7188d3;
-  border-right: 8px solid #7188d3;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
   background-color: #ffffff;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .decision-table .information-item-name::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .decision-table .horz-rule-number {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-left: 4px;
-  padding-top: 4px;
+  padding-left: 2px;
+  padding-top: 2px;
 }
 .decision-table .horz-rule-number::before {
   position: absolute;
   display: block;
   content: "";
-  border-left: 8px solid #7188d3;
+  border-left: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
-  left: -8px;
-  top: -12px;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
   z-index: -1;
 }
 .decision-table .horz-rule-number::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .decision-table .horz-rule-number-last {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-left: 4px;
-  padding-top: 4px;
+  padding-left: 2px;
+  padding-top: 2px;
 }
 .decision-table .horz-rule-number-last::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .decision-table .horz-rule-number-no-input {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-left: 4px;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
+  padding-left: 2px;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
   padding-left: 0;
 }
 .decision-table .horz-rule-number-no-input::before {
   position: absolute;
   display: block;
   content: "";
-  border-left: 8px solid #7188d3;
+  border-left: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
-  left: -8px;
-  top: -12px;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
   z-index: -1;
 }
 .decision-table .horz-rule-number-no-input::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .decision-table .horz-rule-number-no-input-last {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-left: 4px;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
+  padding-left: 2px;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
   padding-left: 0;
 }
 .decision-table .horz-rule-number-no-input-last::before {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .decision-table .horz-rule-number-no-input-last::after {
   position: absolute;
   display: block;
   content: "";
-  border-left: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
-  height: calc(100% + 4px + 8px);
-  left: -8px;
-  top: -8px;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -1px;
   z-index: -1;
 }
 
@@ -165,19 +165,19 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
-  padding-left: 4px;
-  border-bottom: 8px solid #7188d3;
+  padding-left: 2px;
+  border-bottom: 1px solid #000000;
 }
 .horizontal .hit-policy-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .hit-policy-b {
@@ -186,443 +186,443 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
-  padding-left: 4px;
-  border: 8px solid #7188d3;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 2px;
+  border: 1px solid #000000;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .horizontal .hit-policy-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .input-expression-a {
   position: relative;
   text-align: center;
   background-color: #a1c9e3;
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 .horizontal .input-expression-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #a1c9e3;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-expression-b {
   position: relative;
   text-align: center;
   background-color: #a1c9e3;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .input-expression-b::before {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #a1c9e3;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-expression-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .input-expression-c {
   position: relative;
   text-align: center;
   background-color: #a1c9e3;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .input-expression-c::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #a1c9e3;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .input-expression-d {
   position: relative;
   text-align: center;
   background-color: #a1c9e3;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .input-expression-d::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .output-label-a {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-label-a::after {
   position: absolute;
   display: block;
   content: "";
-  border-right: 8px solid #7188d3;
+  border-right: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
+  height: calc(100% + 2px + 1px);
   left: 0;
-  top: 8px;
+  top: 1px;
   z-index: -1;
 }
 .horizontal .output-label-b {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-label-b::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-label-c {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-label-c::before {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .output-label-c::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-label-d {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-label-d::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .output-component-a {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-component-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .output-component-b {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-component-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-right: 8px solid #7188d3;
+  border-right: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
+  height: calc(100% + 2px + 1px);
   left: 0;
-  top: 8px;
+  top: 1px;
   z-index: -1;
 }
 .horizontal .output-component-c {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-component-c::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-component-d {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-component-d::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-component-e {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-component-e::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .output-component-f {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-component-g {
   position: relative;
   background-color: #e5c0dc;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-component-g::before {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #e5c0dc;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-component-g::after {
   position: absolute;
   display: block;
   content: "";
-  border-top: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
+  border-top: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
   height: 100%;
-  left: 8px;
-  top: -8px;
+  left: 1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .annotation-a {
   position: relative;
   background-color: #d5e8d5;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .annotation-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #d5e8d5;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .annotation-b {
   position: relative;
   background-color: #d5e8d5;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  border-right: 8px solid #7188d3;
-  padding: 4px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .annotation-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-right: 8px solid #7188d3;
+  border-right: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
+  height: calc(100% + 2px + 1px);
   left: 0;
-  top: 8px;
+  top: 1px;
   z-index: -1;
 }
 .horizontal .annotation-c {
   position: relative;
   background-color: #d5e8d5;
   text-align: center;
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 .horizontal .annotation-c::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #d5e8d5;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .annotation-d {
   position: relative;
   background-color: #d5e8d5;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  border-right: 1px solid #000000;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 .horizontal .annotation-d::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #d5e8d5;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-value-a {
   position: relative;
   color: #000000;
   background-color: #c0c0c0;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .input-value-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #c0c0c0;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .input-value-b {
@@ -630,30 +630,30 @@
   color: #000000;
   background-color: #c0c0c0;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  border-right: 8px solid #7188d3;
-  padding: 4px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-value-a {
   position: relative;
   color: #000000;
   background-color: #c0c0c0;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-value-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #c0c0c0;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .output-value-b {
@@ -661,19 +661,19 @@
   color: #000000;
   background-color: #c0c0c0;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .output-value-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-right: 8px solid #7188d3;
+  border-right: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
+  height: calc(100% + 2px + 1px);
   left: 0;
-  top: 8px;
+  top: 1px;
   z-index: -1;
 }
 .horizontal .output-value-c {
@@ -681,30 +681,30 @@
   color: #000000;
   background-color: #c0c0c0;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .annotation-value-a {
   position: relative;
   color: #000000;
   background-color: #ffffff;
   text-align: center;
-  border-bottom: 8px solid #7188d3;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 4px;
+  border-bottom: 1px solid #000000;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 }
 .horizontal .annotation-value-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
+  width: calc(100% + 2px);
   height: 100%;
 }
 .horizontal .annotation-value-b {
@@ -712,198 +712,198 @@
   color: #000000;
   background-color: #ffffff;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  padding: 4px;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 2px;
 }
 .horizontal .annotation-value-b::after {
   position: absolute;
   display: block;
   content: "";
-  border-right: 8px solid #7188d3;
+  border-right: 1px solid #000000;
   width: 100%;
-  height: calc(100% + 4px + 8px);
+  height: calc(100% + 2px + 1px);
   left: 0;
-  top: 8px;
+  top: 1px;
   z-index: -1;
 }
 .horizontal .input-entry-a {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 .horizontal .input-entry-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-entry-b {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
 }
 .horizontal .input-entry-b::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-entry-c {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
 }
 .horizontal .input-entry-c::before {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .input-entry-c::after {
   position: absolute;
   display: block;
   content: "";
-  border-left: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
-  height: calc(100% + 4px + 8px);
-  left: -8px;
-  top: -8px;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .output-entry-a {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  padding-left: 4px;
+  padding-top: 2px;
+  padding-left: 2px;
 }
 .horizontal .output-entry-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-entry-b {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .horizontal .output-entry-b::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-entry-c {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-top: 4px;
-  border-right: 8px solid #7188d3;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .horizontal .output-entry-c::before {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
 .horizontal .output-entry-c::after {
   position: absolute;
   display: block;
   content: "";
-  border-left: 8px solid #7188d3;
-  border-bottom: 8px solid #7188d3;
-  width: calc(100% + 4px + 8px);
-  height: calc(100% + 4px + 8px);
-  left: -8px;
-  top: -8px;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -1px;
   z-index: -1;
 }
 .horizontal .annotation-entry-a {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  padding-left: 4px;
+  padding-left: 2px;
 }
 .horizontal .annotation-entry-a::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
 }
 .horizontal .annotation-entry-b {
   position: relative;
   background-color: #ffffff;
   text-align: center;
-  border-right: 8px solid #7188d3;
-  padding-left: 4px;
-  padding-right: 4px;
+  border-right: 1px solid #000000;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .horizontal .annotation-entry-b::after {
   position: absolute;
   display: block;
   content: "";
-  border: 8px solid #7188d3;
+  border: 1px solid #000000;
   background-color: #ffffff;
-  left: -8px;
-  top: -8px;
+  left: -1px;
+  top: -1px;
   z-index: -1;
   width: 100%;
-  height: calc(100% + 4px);
+  height: calc(100% + 2px);
 }
