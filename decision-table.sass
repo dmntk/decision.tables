@@ -98,6 +98,7 @@ $font-size-normal: 16px
   vertical-align: top
   background-color: $background-color-fill
   font-weight: $font-weight-bold
+  padding-top: $border-gap
   padding-left: $border-gap
 
 // common styling for input expressions
@@ -137,7 +138,6 @@ $font-size-normal: 16px
   position: relative
   background-color: $background-color-fill
   text-align: center
-  padding-left: $border-gap
   padding-top: $border-gap
 
 // common styling for input entries
@@ -166,15 +166,25 @@ $font-size-normal: 16px
   background-color: transparent
   font-size: $font-size-normal
 
+  //---------------------------------------------------------
+  // TABLE CELL
+  //---------------------------------------------------------
+
   td
     border-left: $border
     border-top: $border
     padding: 0
     margin: 0
 
+  //---------------------------------------------------------
+  // INFORMATION ITEM NAME
+  //---------------------------------------------------------
+
   .information-item
     position: relative
-    border: unset
+    border-top: unset
+    border-right: unset
+    border-bottom: unset
     border-left: $border
     font-weight: $font-weight-bold
     padding: 0
@@ -187,9 +197,10 @@ $font-size-normal: 16px
 
   .information-item-name
     position: relative
-    border: unset
     border-top: $border
     border-right: $border
+    border-bottom: unset
+    border-left: unset
     background-color: $background-color-fill
     padding-top: $border-gap
     padding-right: $border-gap
@@ -197,43 +208,6 @@ $font-size-normal: 16px
 
     &::after
       @include fill-down
-
-  .horz-rule-number
-    @include rule-number
-
-    &::before
-      @include connector-left-top
-
-    &::after
-      @include fill-right-down
-
-  .horz-rule-number-last
-    @include rule-number
-
-    &::after
-      @include fill-right-down
-
-  .horz-rule-number-no-input
-    @include rule-number
-    border-right: $border
-    padding-left: 0
-
-    &::before
-      @include connector-left-top
-
-    &::after
-      @include fill-down
-
-  .horz-rule-number-no-input-last
-    @include rule-number
-    border-right: $border
-    padding-left: 0
-
-    &::before
-      @include fill-down
-
-    &::after
-      @include connector-bottom-right
 
 .horizontal
 
@@ -251,7 +225,6 @@ $font-size-normal: 16px
   .hit-policy-b
     @include hit-policy
     border: $border
-    padding-left: $border-gap
     padding-right: $border-gap
 
     &::after
@@ -603,3 +576,47 @@ $font-size-normal: 16px
 
     &::after
       @include fill-down
+
+  //---------------------------------------------------------
+  // RULE NUMBERS
+  //---------------------------------------------------------
+
+  .rule-number-a
+    @include rule-number
+    padding-left: $border-gap
+
+    &::before
+      @include connector-left-top
+
+    &::after
+      @include fill-right-down
+
+  .rule-number-b
+    @include rule-number
+    padding-left: $border-gap
+
+    &::after
+      @include fill-right-down
+
+  .rule-number-c
+    @include rule-number
+    border-right: $border
+    padding-left: 0
+
+    &::before
+      @include connector-left-top
+
+    &::after
+      @include fill-down
+
+  .rule-number-d
+    @include rule-number
+    border-right: $border
+    padding-left: 0
+
+    &::before
+      @include fill-down
+
+    &::after
+      @include connector-bottom-right
+

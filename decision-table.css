@@ -11,7 +11,9 @@
 }
 .decision-table .information-item {
   position: relative;
-  border: unset;
+  border-top: unset;
+  border-right: unset;
+  border-bottom: unset;
   border-left: 1px solid #000000;
   font-weight: 400;
   padding: 0;
@@ -24,9 +26,10 @@
 }
 .decision-table .information-item-name {
   position: relative;
-  border: unset;
   border-top: 1px solid #000000;
   border-right: 1px solid #000000;
+  border-bottom: unset;
+  border-left: unset;
   background-color: #ffffff;
   padding-top: 2px;
   padding-right: 2px;
@@ -44,120 +47,6 @@
   width: 100%;
   height: calc(100% + 2px);
 }
-.decision-table .horz-rule-number {
-  position: relative;
-  background-color: #ffffff;
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 2px;
-}
-.decision-table .horz-rule-number::before {
-  position: absolute;
-  display: block;
-  content: "";
-  border-left: 1px solid #000000;
-  width: 100%;
-  height: calc(100% + 2px + 1px);
-  left: -1px;
-  top: -3px;
-  z-index: -1;
-}
-.decision-table .horz-rule-number::after {
-  position: absolute;
-  display: block;
-  content: "";
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  left: -1px;
-  top: -1px;
-  z-index: -1;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-}
-.decision-table .horz-rule-number-last {
-  position: relative;
-  background-color: #ffffff;
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 2px;
-}
-.decision-table .horz-rule-number-last::after {
-  position: absolute;
-  display: block;
-  content: "";
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  left: -1px;
-  top: -1px;
-  z-index: -1;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-}
-.decision-table .horz-rule-number-no-input {
-  position: relative;
-  background-color: #ffffff;
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 2px;
-  border-right: 1px solid #000000;
-  padding-left: 0;
-}
-.decision-table .horz-rule-number-no-input::before {
-  position: absolute;
-  display: block;
-  content: "";
-  border-left: 1px solid #000000;
-  width: 100%;
-  height: calc(100% + 2px + 1px);
-  left: -1px;
-  top: -3px;
-  z-index: -1;
-}
-.decision-table .horz-rule-number-no-input::after {
-  position: absolute;
-  display: block;
-  content: "";
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  left: -1px;
-  top: -1px;
-  z-index: -1;
-  width: 100%;
-  height: calc(100% + 2px);
-}
-.decision-table .horz-rule-number-no-input-last {
-  position: relative;
-  background-color: #ffffff;
-  text-align: center;
-  padding-left: 2px;
-  padding-top: 2px;
-  border-right: 1px solid #000000;
-  padding-left: 0;
-}
-.decision-table .horz-rule-number-no-input-last::before {
-  position: absolute;
-  display: block;
-  content: "";
-  border: 1px solid #000000;
-  background-color: #ffffff;
-  left: -1px;
-  top: -1px;
-  z-index: -1;
-  width: 100%;
-  height: calc(100% + 2px);
-}
-.decision-table .horz-rule-number-no-input-last::after {
-  position: absolute;
-  display: block;
-  content: "";
-  border-left: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  width: calc(100% + 2px + 1px);
-  height: calc(100% + 2px + 1px);
-  left: -1px;
-  top: -1px;
-  z-index: -1;
-}
 
 .horizontal .hit-policy-a {
   position: relative;
@@ -165,6 +54,7 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
+  padding-top: 2px;
   padding-left: 2px;
   border-bottom: 1px solid #000000;
 }
@@ -186,9 +76,9 @@
   vertical-align: top;
   background-color: #ffffff;
   font-weight: 400;
+  padding-top: 2px;
   padding-left: 2px;
   border: 1px solid #000000;
-  padding-left: 2px;
   padding-right: 2px;
 }
 .horizontal .hit-policy-b::after {
@@ -906,4 +796,116 @@
   z-index: -1;
   width: 100%;
   height: calc(100% + 2px);
+}
+.horizontal .rule-number-a {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 2px;
+  padding-left: 2px;
+}
+.horizontal .rule-number-a::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 1px solid #000000;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
+  z-index: -1;
+}
+.horizontal .rule-number-a::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.horizontal .rule-number-b {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 2px;
+  padding-left: 2px;
+}
+.horizontal .rule-number-b::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+.horizontal .rule-number-c {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
+  padding-left: 0;
+}
+.horizontal .rule-number-c::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 1px solid #000000;
+  width: 100%;
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -3px;
+  z-index: -1;
+}
+.horizontal .rule-number-c::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.horizontal .rule-number-d {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 2px;
+  border-right: 1px solid #000000;
+  padding-left: 0;
+}
+.horizontal .rule-number-d::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  left: -1px;
+  top: -1px;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% + 2px);
+}
+.horizontal .rule-number-d::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  width: calc(100% + 2px + 1px);
+  height: calc(100% + 2px + 1px);
+  left: -1px;
+  top: -1px;
+  z-index: -1;
 }
